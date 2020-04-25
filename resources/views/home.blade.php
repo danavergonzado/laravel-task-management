@@ -50,19 +50,16 @@
                   <div class="active tab-pane" id="activity">
                     <!-- Post -->
                     <div class="post">
-                      <div class="user-block">
-                            <img class="img-circle img-bordered-sm" src="../../dist/img/user1-128x128.jpg" alt="user image">
-                            <span class="description">Mobile - 7:30 PM today</span>
-                            <p style="margin-left:50px">Redesign Web to match Laravel version</p>
-                      </div>
-                    
 
+                      @forelse($tasks as $task)
                       <div class="user-block">
-                            <img class="img-circle img-bordered-sm" src="../../dist/img/user3-128x128.jpg" alt="user image">
-                            <span class="description">E-commerce - 7:30 PM today</span>
-                            <p style="margin-left:50px">Checkout Error: Promo code not credited.</p>
+                            <img class="img-circle img-bordered-sm" src="../../dist/img/AdminLTELogo.png" alt="user image">
+                            <span class="description">{{ $task->user->username}} on {{ $task->created_at->format('m/d/Y h:i:s A') }}</span>
+                            <p style="margin-left:50px">{{ $task->name}}</p>
                       </div>
-                      
+                      @empty
+                        <p>No Activity</p>
+                      @endforelse
                     </div>
                     
                     <!-- /.post -->
