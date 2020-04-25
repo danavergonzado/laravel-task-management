@@ -20,7 +20,7 @@
 </head>
 <body class="hold-transition login-page">
 
-@yield('login')
+@yield('content')
 
 <!-- jQuery -->
 <script src="../../plugins/jquery/jquery.min.js"></script>
