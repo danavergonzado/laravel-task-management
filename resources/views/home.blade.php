@@ -27,12 +27,6 @@
 
                 <a href="#" class="btn btn-primary btn-block"><b>Start Test</b></a>
                 <a href="#" class="btn btn-warning btn-block"><b>Goto Break</b></a>
-                <a href="{{ route('logout') }}" class="btn btn-danger btn-block" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">
-                    <b> {{ __('Logout') }}</b>
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
               </div>
               <!-- /.card-body -->
             </div>
