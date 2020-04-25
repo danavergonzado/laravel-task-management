@@ -5,7 +5,6 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-3">
-
             <!-- Profile Image -->
             <div class="card">
               <div class="card-body box-profile">
@@ -46,7 +45,7 @@
                 </ul>
               </div><!-- /.card-header -->
               <div class="card-body">
-                <div class="tab-content">
+                <div class="tab-content"  style="min-height:350px; max-height:350px; overflow:auto">
 
                   <div class="active tab-pane" id="activity">
                     <!-- Post -->
@@ -73,12 +72,13 @@
 
                   <div class="tab-pane" id="members">
                     <!-- The timeline -->
+                    Team members here
                  
                   </div>
                   <!-- /.tab-pane -->
 
                   <div class="tab-pane" id="tasks">
-                 
+                 Task here
                   </div>
                   <!-- /.tab-pane -->
                 </div>
