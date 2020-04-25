@@ -26,6 +26,6 @@
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
-    </div>
+    </div> -->
     <!-- /.sidebar -->
   </aside>

@@ -1,21 +1,102 @@
 @extends('layouts.app')
-
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+ <!-- Main content -->
+ <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3">
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+            <!-- Profile Image -->
+            <div class="card card-primary card-outline">
+              <div class="card-body box-profile">
+                <div class="text-center">
+                  <img class="profile-user-img img-fluid img-circle"
+                       src="../../dist/img/user4-128x128.jpg"
+                       alt="User profile picture">
                 </div>
+
+                <h3 class="profile-username text-center">{{ Auth::user()->name }}</h3>
+
+                <p class="text-muted text-center">{{ Auth::user()->position }}</p>
+
+                <ul class="list-group list-group-unbordered mb-3">
+                  <li class="list-group-item">
+                    <b>Running Tasks</b> <a class="float-right">12</a>
+                  </li>
+                </ul>
+
+                <a href="#" class="btn btn-primary btn-block"><b>Start Test</b></a>
+                <a href="#" class="btn btn-warning btn-block"><b>Goto Break</b></a>
+                <a href="{{ route('logout') }}" class="btn btn-danger btn-block" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">
+                    <b> {{ __('Logout') }}</b>
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+              </div>
+              <!-- /.card-body -->
             </div>
+            <!-- /.card -->
+
+           
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+          <div class="col-md-9">
+            <div class="card">
+              <div class="card-header p-2">
+                <ul class="nav nav-pills">
+                  <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Activity</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#members" data-toggle="tab">Team Members</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#tasks" data-toggle="tab">Tasks</a></li>
+                </ul>
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                <div class="tab-content">
+
+                  <div class="active tab-pane" id="activity">
+                    <!-- Post -->
+                    <div class="post">
+                      <div class="user-block">
+                            <img class="img-circle img-bordered-sm" src="../../dist/img/user1-128x128.jpg" alt="user image">
+                            <span class="description">Mobile - 7:30 PM today</span>
+                            <p style="margin-left:50px">Redesign Web to match Laravel version</p>
+                      </div>
+                    
+
+                      <div class="user-block">
+                            <img class="img-circle img-bordered-sm" src="../../dist/img/user3-128x128.jpg" alt="user image">
+                            <span class="description">E-commerce - 7:30 PM today</span>
+                            <p style="margin-left:50px">Checkout Error: Promo code not credited.</p>
+                      </div>
+                      
+                    </div>
+                    
+                    <!-- /.post -->
+                  </div>
+                  <!-- /.tab-pane -->
+
+
+                  <div class="tab-pane" id="members">
+                    <!-- The timeline -->
+                 
+                  </div>
+                  <!-- /.tab-pane -->
+
+                  <div class="tab-pane" id="tasks">
+                 
+                  </div>
+                  <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+              </div><!-- /.card-body -->
+            </div>
+            <!-- /.nav-tabs-custom -->
+          </div>
+          <!-- /.col -->
         </div>
-    </div>
-</div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
 @endsection
