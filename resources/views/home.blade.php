@@ -67,7 +67,7 @@
                   <!-- /.tab-pane -->
 
 
-                  <div class="tab-pane" id="members">
+                  <div class="tab-pane p-0" id="members">
                     <ul class="users-list clearfix">
                       <li>
                         <img src="dist/img/user1-128x128.jpg" alt="User Image" width="90px">
