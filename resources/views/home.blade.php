@@ -40,7 +40,7 @@
               <div class="card-header p-2">
                 <ul class="nav nav-pills">
                   <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Activity</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#members" data-toggle="tab">Team Members</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#members" data-toggle="tab">Online Team</a></li>
                   <li class="nav-item"><a class="nav-link" href="#tasks" data-toggle="tab">Tasks</a></li>
                 </ul>
               </div><!-- /.card-header -->
@@ -54,7 +54,7 @@
                       @forelse($tasks as $task)
                       <div class="user-block">
                             <img class="img-circle img-bordered-sm" src="../../dist/img/AdminLTELogo.png" alt="user image">
-                            <span class="description">{{ $task->user->username}} on {{ $task->created_at->format('m/d/Y h:i:s A') }}</span>
+                            <span class="description">{{ $task->created_at->format('m/d/Y h:i:s A') }} - {{ $task->user->username}} on {{ $task->category}}</span>
                             <p style="margin-left:50px">{{ $task->name}}</p>
                       </div>
                       @empty
@@ -68,11 +68,40 @@
 
 
                   <div class="tab-pane" id="members">
-                    <!-- The timeline -->
-                    Team members here
+                    <ul class="users-list clearfix">
+                      <li>
+                        <img src="dist/img/user1-128x128.jpg" alt="User Image" width="90px">
+                        <a class="users-list-name" href="#">Alexander Pierce</a>
+                        <span class="users-list-date">Today</span>
+                      </li>
+                      <li>
+                        <img src="dist/img/user8-128x128.jpg" alt="User Image" width="90px">
+                        <a class="users-list-name" href="#">Norman</a>
+                        <span class="users-list-date">Yesterday</span>
+                      </li>
+                      <li>
+                        <img src="dist/img/user1-128x128.jpg" alt="User Image" width="90px">
+                        <a class="users-list-name" href="#">Alexander Pierce</a>
+                        <span class="users-list-date">Today</span>
+                      </li>
+                      <li>
+                        <img src="dist/img/user8-128x128.jpg" alt="User Image" width="90px">
+                        <a class="users-list-name" href="#">Norman</a>
+                        <span class="users-list-date">Yesterday</span>
+                      </li>
+                      <li>
+                        <img src="dist/img/user1-128x128.jpg" alt="User Image" width="90px">
+                        <a class="users-list-name" href="#">Alexander Pierce</a>
+                        <span class="users-list-date">Today</span>
+                      </li>
+                      <li>
+                        <img src="dist/img/user8-128x128.jpg" alt="User Image" width="90px">
+                        <a class="users-list-name" href="#">Norman</a>
+                        <span class="users-list-date">Yesterday</span>
+                      </li>
+                    </ul>
+                  </div> <!-- / end of members tab -->
                  
-                  </div>
-                  <!-- /.tab-pane -->
 
                   <div class="tab-pane" id="tasks">
                  Task here
